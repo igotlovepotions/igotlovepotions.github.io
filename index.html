@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ame | Engenharia Elétrica</title>
+<meta name="description" content="Estudante de Engenharia Elétrica na UNIFEI. Projetos, PET Elétrica e o projeto Shine.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#e8edf2; --grid:#c9d4de; --ink:#13233a; --muted:#4b5d75;
+  --trace:#1f5bff; --signal:#e5383b; --panel:#f6f8fa;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#0f1a2b; --grid:#1b2c45; --ink:#e6edf6; --muted:#9bb0c9; --trace:#5b8cff; --signal:#ff6b6e; --panel:#15233a; }
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{
+  background-color:var(--paper);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:40px 40px;
+  color:var(--ink);
+  font-family:'Newsreader',Georgia,serif;
+  font-size:1.2rem;line-height:1.6;
+}
+h1,h2,h3,.sans{font-family:'Familjen Grotesk',system-ui,sans-serif}
+a{color:var(--ink);text-underline-offset:4px;text-decoration-thickness:2px;text-decoration-color:var(--trace)}
+a:hover{color:var(--trace)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+.wrap{max-width:860px;margin:0 auto;padding:0 1.5rem}
+
+/* hero */
+.hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;overflow:hidden;border-bottom:2px solid var(--ink)}
+#wave{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;padding-bottom:4rem;padding-top:6rem;width:100%}
+h1{font-size:clamp(5rem,22vw,13rem);line-height:.85;font-weight:700;letter-spacing:-.04em}
+.tag{margin-top:1.5rem;max-width:34ch;font-size:1.4rem;background:var(--paper);display:inline-block;padding:.2rem .6rem .2rem 0}
+.hint{position:absolute;top:1.2rem;right:1.5rem;font-size:.9rem;color:var(--muted);background:var(--paper);padding:.2rem .5rem}
+
+section{padding:4.5rem 0;border-bottom:2px solid var(--ink)}
+h2{font-size:2rem;margin-bottom:1.5rem;letter-spacing:-.01em}
+p+p{margin-top:1rem}
+.about p{max-width:62ch}
+
+/* projects */
+.proj{list-style:none;padding:0}
+.proj li{border-top:2px solid var(--ink);background:var(--panel)}
+.proj li:last-child{border-bottom:2px solid var(--ink)}
+.proj a{display:grid;grid-template-columns:1fr auto;gap:.2rem 1.5rem;padding:1.3rem 1.2rem;text-decoration:none;color:inherit}
+.proj a:hover{background:var(--ink);color:var(--paper)}
+.proj a:hover .st{color:var(--paper)}
+.proj h3{font-size:1.4rem}
+.proj p{grid-column:1;color:inherit;opacity:.85;font-size:1.05rem;margin:0}
+.st{font-size:.95rem;color:var(--signal);align-self:start;font-family:'Familjen Grotesk',sans-serif;font-weight:500}
+
+.shine{display:grid;grid-template-columns:1fr;gap:1rem}
+.shine blockquote{border-left:6px solid var(--signal);padding-left:1.2rem;max-width:56ch}
+
+.links{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1rem}
+.links a{font-family:'Familjen Grotesk',sans-serif;font-weight:500;padding:.7rem 1.2rem;border:2px solid var(--ink);text-decoration:none;background:var(--panel)}
+.links a:hover{background:var(--ink);color:var(--paper)}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:1rem}
+@media (max-width:560px){.proj a{grid-template-columns:1fr}.st{order:-1}.hint{display:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <canvas id="wave" aria-hidden="true"></canvas>
+  <span class="hint sans">mova o mouse para mudar a frequência</span>
+  <div class="wrap">
+    <h1>Ame</h1>
+    <p class="tag">Estudante de Engenharia Elétrica na UNIFEI, entre circuitos, sistemas e código.</p>
+  </div>
+</header>
+
+<main>
+  <section class="about" id="sobre">
+    <div class="wrap">
+      <h2>Sobre</h2>
+      <p>Curso Engenharia Elétrica na Universidade Federal de Itajubá (UNIFEI) e participo do PET Elétrica. Gosto de entender sistemas inteiros, da geração de energia até o software que roda em cima deles.</p>
+      <p>Fora da sala de aula, mexo com hardware, automação e ferramentas de produtividade pessoais.</p>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <div class="wrap">
+      <h2>Projetos</h2>
+      <ul class="proj">
+        <li><a href="https://github.com/SEU_USUARIO/analise-setor-eletrico">
+          <h3>Análise do setor elétrico brasileiro</h3><span class="st">em andamento</span>
+          <p>Estudo do setor elétrico do Brasil sob a ótica da engenharia de sistemas.</p>
+        </a></li>
+        <li><a href="https://github.com/SEU_USUARIO/assistente-local">
+          <h3>Assistente de IA local</h3><span class="st">planejando</span>
+          <p>Assistente pessoal rodando na minha própria máquina, integrado ao Obsidian.</p>
+        </a></li>
+        <li><a href="https://github.com/SEU_USUARIO/obsidian-sync">
+          <h3>Sincronização do vault do Obsidian</h3><span class="st">funcionando</span>
+          <p>Notas sincronizadas entre PCs via GitHub, com repositório privado e criptografia git-crypt.</p>
+        </a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="shine">
+    <div class="wrap shine">
+      <h2>Shine</h2>
+      <blockquote>Projeto voluntário de ensino de inglês para crianças. Aulas leves, em grupo, com foco em perder o medo de falar.</blockquote>
+    </div>
+  </section>
+
+  <section id="contato" style="border-bottom:0">
+    <div class="wrap">
+      <h2>Contato</h2>
+      <p>Quer conversar sobre projetos, PET ou voluntariado?</p>
+      <div class="links">
+        <a href="https://github.com/SEU_USUARIO">GitHub</a>
+        <a href="mailto:SEU_EMAIL@exemplo.com">E-mail</a>
+        <a href="https://www.linkedin.com/in/SEU_USUARIO">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Feito à mão, com um osciloscópio de mentira no topo.</div></footer>
+
+<script>
+(function(){
+  const c=document.getElementById('wave'),x=c.getContext('2d');
+  const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let w,h,freq=2,target=2,t=0;
+  function size(){
+    const r=c.getBoundingClientRect(),d=devicePixelRatio||1;
+    w=c.width=r.width*d;h=c.height=r.height*d;
+  }
+  function css(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim()}
+  function draw(){
+    freq+=(target-freq)*.06; t+=.012;
+    x.clearRect(0,0,w,h);
+    const mid=h*.38,amp=h*.2;
+    x.lineWidth=4*(devicePixelRatio||1);
+    x.strokeStyle=css('--trace');x.beginPath();
+    for(let i=0;i<=w;i+=4){
+      const p=i/w*Math.PI*2*freq+t;
+      const y=mid+Math.sin(p)*amp;
+      i?x.lineTo(i,y):x.moveTo(i,y);
+    }
+    x.stroke();
+    x.strokeStyle=css('--signal');x.lineWidth=2*(devicePixelRatio||1);x.beginPath();
+    for(let i=0;i<=w;i+=4){
+      const p=i/w*Math.PI*2*freq*3+t*2;
+      const y=mid+Math.sin(p)*amp*.33*Math.sin(i/w*Math.PI);
+      i?x.lineTo(i,y):x.moveTo(i,y);
+    }
+    x.stroke();
+    if(!still)requestAnimationFrame(draw);
+  }
+  addEventListener('resize',()=>{size();if(still)draw()});
+  addEventListener('pointermove',e=>{target=1+e.clientX/innerWidth*5});
+  size();draw();
+})();
+</script>
+</body>
+</html>
